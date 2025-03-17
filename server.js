@@ -2,7 +2,6 @@ import express from "express";
 import { google } from "googleapis";
 import dotenv from "dotenv";
 import fs from "fs";
-import path from "path";
 
 dotenv.config();
 
@@ -19,6 +18,7 @@ const sheets = google.sheets({ version: "v4", auth });
 const SHEET_ID = process.env.SHEET_ID;
 const RANGE = "A:C";
 
+//Function to fetch data
 const fetchStockData = async () => {
   try {
     const response = await sheets.spreadsheets.values.get({
@@ -47,6 +47,7 @@ fetchStockData();
 
 setInterval(fetchStockData, 30 * 60 * 1000);
 
+//Route
 app.get("/api/stock-price", async (req, res) => {
   const { symbol, date } = req.query;
 
