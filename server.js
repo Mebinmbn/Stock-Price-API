@@ -1,15 +1,14 @@
 import express from "express";
 import { google } from "googleapis";
 import dotenv from "dotenv";
-import fs from "fs";
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: "stock-price-api-454016-e99fe006a940.json",
+  keyFile: process.env.KEY_FILE,
   scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
 });
 
@@ -33,7 +32,7 @@ const fetchStockData = async () => {
     const stockData = rows.slice(1).map((row) => ({
       date: row[0],
       symbol: row[1],
-      closing_price: parseFloat(row[2]),
+      closing_price: row[2] ? parseFloat(row[2]) : null,
     }));
 
     return stockData;
@@ -52,6 +51,7 @@ app.get("/api/stock-price", async (req, res) => {
 
   try {
     const stockData = await fetchStockData();
+    console.log("stockData", stockData);
     const stock = stockData.find(
       (item) => item.symbol === symbol && item.date === date
     );
@@ -66,4 +66,6 @@ app.get("/api/stock-price", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running on port http://localhost:${PORT}`)
+);
