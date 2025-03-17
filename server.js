@@ -1,6 +1,8 @@
 import express from "express";
 import { google } from "googleapis";
 import dotenv from "dotenv";
+import fs from "fs";
+import path from "path";
 
 dotenv.config();
 
@@ -35,12 +37,15 @@ const fetchStockData = async () => {
       closing_price: row[2] ? parseFloat(row[2]) : null,
     }));
 
-    return stockData;
+    fs.writeFileSync("./stockData.json", JSON.stringify(stockData, null, 2));
   } catch (error) {
     console.error("Error fetching stock data:", error);
-    return [];
   }
 };
+
+fetchStockData();
+
+setInterval(fetchStockData, 30 * 60 * 1000);
 
 app.get("/api/stock-price", async (req, res) => {
   const { symbol, date } = req.query;
@@ -49,9 +54,11 @@ app.get("/api/stock-price", async (req, res) => {
     return res.status(400).json({ error: "Symbol and date are required" });
   }
 
+  if (!fs.existsSync("./stockData.json")) {
+    return res.status(500).json({ error: "Stock data not available yet" });
+  }
   try {
-    const stockData = await fetchStockData();
-    console.log("stockData", stockData);
+    const stockData = JSON.parse(fs.readFileSync("./stockData.json", "utf-8"));
     const stock = stockData.find(
       (item) => item.symbol === symbol && item.date === date
     );

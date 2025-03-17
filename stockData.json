@@ -1,0 +1,107 @@
+[
+  {
+    "date": "2024-04-01",
+    "symbol": "TATASTEEL",
+    "closing_price": 120.5
+  },
+  {
+    "date": "2024-04-01",
+    "symbol": "INFY",
+    "closing_price": 1452.8
+  },
+  {
+    "date": "2024-04-01",
+    "symbol": "RELIANCE",
+    "closing_price": 2600.7
+  },
+  {
+    "date": "2024-04-02",
+    "symbol": "TATASTEEL",
+    "closing_price": 122.3
+  },
+  {
+    "date": "2024-04-02",
+    "symbol": "INFY",
+    "closing_price": 1460.2
+  },
+  {
+    "date": "2024-04-02",
+    "symbol": "RELIANCE",
+    "closing_price": 2612.5
+  },
+  {
+    "date": "2024-04-03",
+    "symbol": "TATASTEEL",
+    "closing_price": 119.8
+  },
+  {
+    "date": "2024-04-03",
+    "symbol": "INFY",
+    "closing_price": 1448.1
+  },
+  {
+    "date": "2024-04-03",
+    "symbol": "RELIANCE",
+    "closing_price": 2598.9
+  },
+  {
+    "date": "2024-04-04",
+    "symbol": "TATASTEEL",
+    "closing_price": 118.9
+  },
+  {
+    "date": "2024-04-04",
+    "symbol": "INFY",
+    "closing_price": 1435.7
+  },
+  {
+    "date": "2024-04-04",
+    "symbol": "RELIANCE",
+    "closing_price": 2585.4
+  },
+  {
+    "date": "2024-04-05",
+    "symbol": "TATASTEEL",
+    "closing_price": 121.2
+  },
+  {
+    "date": "2024-04-05",
+    "symbol": "INFY",
+    "closing_price": 1458.3
+  },
+  {
+    "date": "2024-04-05",
+    "symbol": "RELIANCE",
+    "closing_price": 2620.8
+  },
+  {
+    "date": "2024-04-06",
+    "symbol": "TATASTEEL",
+    "closing_price": 123
+  },
+  {
+    "date": "2024-04-06",
+    "symbol": "INFY",
+    "closing_price": 1470.5
+  },
+  {
+    "date": "2024-04-06",
+    "symbol": "RELIANCE",
+    "closing_price": 2635.2
+  },
+  {
+    "date": "2024-04-07",
+    "symbol": "TATASTEEL",
+    "closing_price": 124.5
+  },
+  {
+    "date": "2024-04-07",
+    "symbol": "INFY",
+    "closing_price": 1482
+  },
+  {
+    "date": "2024-04-07",
+    "symbol": "RELIANCE",
+    "closing_price": 2650
+  }
+]
