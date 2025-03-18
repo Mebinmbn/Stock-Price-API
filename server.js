@@ -47,7 +47,7 @@ fetchStockData();
 
 setInterval(fetchStockData, 30 * 60 * 1000);
 
-//Route
+//api end point
 app.get("/api/stock-price", async (req, res) => {
   const { symbol, date } = req.query;
 
