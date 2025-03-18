@@ -4,16 +4,16 @@ Description:
 This project is a Node.js-based API that fetches stock price data from a Google Spreadsheet and provides an endpoint to query stock prices by symbol and date.
 
 Features:
-Fetches stock data from a Google Spreadsheet
-Stores the data in a local JSON file (stockData.json)
-Updates stock data every 30 minutes
-Provides an API endpoint to retrieve stock prices by symbol and date
+Fetches stock data from a Google Spreadsheet.
+Stores the data in a local JSON file (stockData.json).
+Updates stock data every 30 minutes.
+Provides an API endpoint to retrieve stock prices by symbol and date.
 
 Tech Stack:
-Node.js
-Express.js
-Google Sheets API
-dotenv
+Node.js,
+Express.js,
+Google Sheets API,
+dotenv,
 fs (File System)
 
 Installation:
@@ -27,8 +27,8 @@ Install dependencies:
 npm install
 
 Create a .env file and add the following variables:
-PORT=8080
-SHEET_ID=your_google_sheet_id
+PORT=8080,
+SHEET_ID=your_google_sheet_id,
 KEY_FILE=path_to_your_google_credentials.json
 
 Run the server:
